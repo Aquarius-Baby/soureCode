@@ -5,13 +5,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author: Aquarius
- * @time: 2022/9/17 23:30
+ * @time: 2022/9/18 01:29
  * @description:
  */
-public class Test {
+public class MyDemo {
 	public static void main(String[] args) {
-		ApplicationContext ac = new ClassPathXmlApplicationContext("teacherTest.xml");
-		Teacher teacher = ac.getBean(Teacher.class);
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("teacherxml.xml");
+		Teacher teacher = (Teacher) applicationContext.getBean("teacher");
 		System.out.println(teacher.getName());
+		System.out.println(teacher.getApplicationContext());
 	}
 }
